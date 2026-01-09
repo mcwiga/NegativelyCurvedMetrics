@@ -1,6 +1,2 @@
 \babel@toc {english}{}\relax 
 \beamer@sectionintoc {1}{Knot}{3}{0}{1}
-\beamer@sectionintoc {2}{Application of Knots}{17}{0}{2}
-\beamer@sectionintoc {3}{Fractals}{30}{0}{3}
-\beamer@sectionintoc {4}{Embedding into Menger Sponge}{39}{0}{4}
-\beamer@sectionintoc {5}{Embedding into Sierpinski Tetrahedron}{56}{0}{5}
