@@ -108,7 +108,7 @@
 \ExecuteOptionsBeamer{kulak} %standaardopties
 \ProcessOptionsBeamer
 
-
+\newtheorem*{remark}{Remark}
 \mode<all>
 
 
