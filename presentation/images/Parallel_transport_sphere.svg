@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="123.49mm" height="125.92mm" version="1.1" viewBox="0 0 123.49 125.92" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <defs>
+  <radialGradient id="radialGradient898" cx="-185.87" cy="102.28" r="58.67" fx="-199.46" fy="115.9" gradientTransform="matrix(-1.4191e-7 1.0913 -1.0913 -1.4191e-7 166.91 262.71)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fafdf9" offset="0"/>
+   <stop stop-color="#ade2ab" offset="1"/>
+  </radialGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <circle cx="81.45" cy="25.293" r="0" fill="#c000dd" fill-rule="evenodd" stroke="#0000bc" stroke-width=".61357"/>
+ <circle cx="64.74" cy="67.138" r="56.76" fill="url(#radialGradient898)" fill-rule="evenodd" stroke="#0000bc" stroke-width=".61357"/>
+ <g fill="none">
+  <path d="m7.9831 67.138a56.76 13.285 0 0 1 56.76-13.285 56.76 13.285 0 0 1 56.76 13.285" stroke="#0000bc" stroke-dasharray="1.22713753, 1.22713753000000003" stroke-opacity=".2266" stroke-width=".61357"/>
+  <path d="m22.389 53.219c22.101 0 33.768-33.093 69.416-30.734" stroke="#c100dd" stroke-width=".92604"/>
+  <path d="m121.5 67.138a56.76 13.285 0 0 1-28.38 11.505 56.76 13.285 0 0 1-56.76 0 56.76 13.285 0 0 1-28.38-11.505" stroke="#0000bc" stroke-width=".61357"/>
+ </g>
+ <path transform="matrix(.9692 -.24629 .71552 .6986 0 0)" d="m44.226 25.955 21.429 3.3833v48.703l-23.388 6.4672z" fill="#ffc3c3" fill-opacity=".52217" fill-rule="evenodd" stroke="#0000bc" stroke-linecap="square" stroke-linejoin="round" stroke-width=".66422"/>
+ <path transform="matrix(.99938 .035205 -.3391 .94075 0 0)" d="m25.708 18.951 44.48-1.9687v54.385l-44.48-1.9687z" fill="#ffc3c3" fill-opacity=".52217" fill-rule="evenodd"/>
+ <path d="m22.389 53.219c18.309 0 26.401-23.051 36.276-34.789" fill="none" stroke="#a0000a" stroke-width=".92604"/>
+ <g stroke="#0000bc" stroke-linecap="square" stroke-linejoin="round">
+  <ellipse transform="matrix(.99938 .035205 -.3391 .94075 0 0)" cx="41.279" cy="54.923" rx="1.3109" ry="1.4294" fill="#c000dd" fill-rule="evenodd" stroke-width=".62881"/>
+  <path transform="matrix(.99938 .035205 -.3391 .94075 0 0)" d="m25.708 18.951 44.48-1.9687v54.385l-44.48-1.9687z" fill="none" stroke-width=".62881"/>
+  <ellipse transform="matrix(.9692 -.24629 .71552 .6986 0 0)" cx="55.956" cy="52.175" rx="1.193" ry="1.7525" fill="#c000dd" fill-rule="evenodd" stroke-width=".66422"/>
+ </g>
+</svg>

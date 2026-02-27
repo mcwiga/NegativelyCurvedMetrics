@@ -1,34 +1,369 @@
-\section{Basic Constructions}
+\section{Classical Surface Geometry}
+\frame[c]{\sectionpage}
 
-\begin{frame}[c]{Affine Manifolds}
+\begin{frame}[c]{Curvature}
+	\begin{center}
+		\Large{What is curvature?}
+	\end{center}
+\end{frame}
+
+\begin{frame}[c]{Curvature}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.25]{images/Normal to the Surface.png}
+		\caption{Normal section of a curved surface}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{First and Second Fundamental Form}
+	\begin{definition}[First Fundamental Form]
+		A surface in $\mathbb{R}^n$ inherits an inner product which we call the \emph{first fundamental form} and denote $I$.
+	\end{definition}
+	Also associated to a surface in $\mathbb{R}^3$ is:
+	\begin{itemize}
+		\item The \emph{second fundamental form} $II_p : T_pM \times T_pM \to \mathbb{R}$ -
+		      symmetric, non-degenerate.
+		\item The \emph{shape operator} $S$ satisfying $I(SX,Y) = II(SX, Y)$ - self adjoint.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Shape Operator and Second Fundamental Form}
+	In coordinates, we can write the metric $I$ and second fundamental form $II$ in matrix form as
+	$$I = \begin{pmatrix}
+			E & F \\ F & G
+		\end{pmatrix}, \quad II = \begin{pmatrix}
+			e & f \\ f & g
+		\end{pmatrix}$$
+	\begin{remark}
+		The shape operator $S$ can be expressed as $I^{-1}II$ in coordinates.
+	\end{remark}
+\end{frame}
+
+\begin{frame}[c]{Extrinsic Curvature}
+	\begin{kulblock}{Definition}
+		The \emph{extrinsic} curvature $K$, is defined to be
+		$$K = \dfrac{eg-f^2}{EG- F^2} = \kappa_1 \kappa_2 = \det (S)$$
+		where $\kappa_1, \kappa_2$ are the eigenvalues of $S$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{This is Intrinsic!}
+	\begin{kulblock}{Theorem Egregium (Gauss 1827)}
+		\begin{center}
+			For a surface in $\mathbb{R}^3$, the quantity $K = \kappa_1 \kappa_2$ is intrinsic!
+		\end{center}
+	\end{kulblock}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.3]{images/intrinsicillustratyion.png}
+		\caption{Two isometric surfaces with different principle curvatures (Lee)}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]
+	\begin{center}
+		\Large{What about surfaces not in $\mathbb{R}^n?$}
+	\end{center}
+\end{frame}
+
+\begin{frame}[c]{Riemannian Manifold}
 
 	\begin{kulblock}{Definition}
-		An \textit{affine manifold} is a differentiable manifold such that the transition maps lie in the affine group $\text{Aff}(\R^n)$
+		A Riemannian manifold $(M, \inner{\cdot}{\cdot})$ is a differentiable manifold M with a smooth $\mathbb{R}$-bilinear form
+		$$\inner{\cdot}{\cdot} : TM \times TM \to \mathbb{R}$$
+		such that $\inner{\cdot}{\cdot}$ is symmetric and positive-definite.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Isometric Immersion}
+	\begin{kulblock}{Definition}
+		An isometric immersion between two Riemannian manifolds $(M,g_1)$ and $(N, g_2)$ is a differentiable map
+		$$ i: N \to M $$
+		such that the derivative $di$ is injective and $g_2(v, w)|_p = g_1(di(v), di(w))|_{i(p)}$ for all $v,w \in T_pN$ and $p \in N$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Connections}
+
+	\begin{kulblock}{Definition}
+		Let $(M , \inner{\cdot}{\cdot})$ be a Riemannian manifold. A connection on the tangent bundle $TM$ is a map
+		$$ \nabla : \text{Vect}(M) \times \text{Vect}(M) \to \text{Vect}(M)$$
+		that satisfies $\nabla_X fY = X(f)Y + f\nabla_XY$ for $f \in C^{\infty}(M)$ and otherwise is linear.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Connections}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.4]{images/parallelTransport.png}
+		\caption{Connecting two tangent spaces on the sphere (Wikipedia)}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{The Levi Civita Connection}
+	\begin{kulblock}{Definition}
+		On a Riemannian manifold $(M, g)$, there is a unique connection called the Levi Civita connection that is compatible with the metric e.g. the metric $g$ "looks the same" everywhere on $M$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Geodesics}
+	\begin{kulblock}{Definition}
+		A geodesic is a curve that locally minimizes distances.
+	\end{kulblock}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.1]{images/1280px-Great_Circle.svg.png}
+		\caption{Great circles are geodesics on the sphere}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Completeness}
+	\begin{kulblock}{Definition}
+		A Riemannian manifold is said to be complete if every geodesic can be traversed along for an infinite amount of time.
+	\end{kulblock}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.2]{images/Incomplete.png}
+		\caption{An incomplete geodesic}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Riemann Curvature Tensor}
+	\begin{kulblock}{Definition}
+		Let $(M,g)$ be a Riemannian manifold. The Riemann curvature tensor is defined as
+		$$ R(X,Y)Z = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X,Y]} Z$$
 	\end{kulblock}
 	\begin{remark}
-		The group $\text{Aff}(\R^n) := \text{GL}(\R^n) \ltimes \R^n$. An element $g \in \text{Aff}(\R^n)$ acts on $x\in \R^n$ by $g(x) = Ax +b$ where $A \in \text{GL}(\R^n)$ and $b \in \R^n$.
+		This object encodes the intrinsic curvature of a Riemannian manifold.
 	\end{remark}
+\end{frame}
+
+\begin{frame}[c]{Sectional Curvature}
+	\begin{kulblock}{Definition}
+		The \emph{sectional curvature} of $\Pi \subset T_pM$ is defined as
+		$$sec(\Pi) = \langle R(e_1, e_2)e_1, e_2 \rangle$$
+		where $\Pi = \text{span}(e_1,e_2)$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Space Forms}
+	\begin{kulblock}{Definition}
+		A \emph{space form} is a complete Riemannian manifold $M$ with constant sectional curvature.
+	\end{kulblock}
+	\begin{remark}
+		If $M$ is a complete simply connected Riemannian manifold with constant sectional curvature $c$
+		\begin{itemize}
+			\item $c=0 \implies M \cong \mathbb{R}^n$
+			\item $c = 1 \implies M \cong S^n$
+			\item $ c = -1 \implies M \cong \mathbb{H}^n$
+		\end{itemize}
+	\end{remark}
+\end{frame}
+
+\section{Codazzi Pairs}
+\frame[c]{\sectionpage}
+\begin{frame}[c]{Gauss Equation}
+	Let $\mathbb{M}^3(c)$ denote the unique simply connected space form with sectional curvature $c$.
+
+	\begin{kulblock}{Definition}
+		The Gauss equation of an immersion $f: \Sigma \to \mathbb{M}^3(c)$
+		$$K(I) = K + c$$
+		where $K = \det(S)$ is the extrinsic curvature and $K(I)$ is the intrinsic curvature e.g. the sectional curvature $sec(T_p\Sigma)$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Codazzi Equation}
+	\begin{kulblock}{Definition}
+		The Codazzi equation associated to the pair $(I,II)$ with shape operator $S$ is given by
+		$$\nabla_X SY - \nabla_Y SX = S[X,Y]$$
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Bonnet Theorem}
+	\begin{kulblock}{Definition}
+		Let $U \subset \mathbb{R}^2$ be open and let $I$ be a Riemannian metric on $U$ and $II$ be a symmetric bilinear form on $U$. If $I$ and $II$ satisfy the Gauss-Codazzi equations then there is an immersion
+		$$i: U \to \mathbb{R}^2$$
+		such that $I$ is the Riemannian metric and $II$ is the second fundamental form.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Fundamental Pair}
+	\begin{kulblock}{Definition}
+		A fundamental pair on an oriented surface $\Sigma$, is a pair of real quadratic forms $(I, II)$, such that $I$ is a Riemannian metric
+	\end{kulblock}
+	\begin{remark}
+		Associated to a fundamental pair is a shape operator $S$ defined by
+		$$ II(X, Y) = I(SX, Y), \quad X,Y \in \text{Vec}(\Sigma)$$
+	\end{remark}
+\end{frame}
+
+\begin{frame}[c]{Codazzi Pair}
+	\begin{kulblock}{Definition}
+		A fundamental pair $(I, II)$ with shape operator $S$ is a Codazzi pair if the Codazzi equation is satisfied - i.e.
+		$$\nabla_X SY - \nabla_Y SX - S[X, Y] = 0$$
+		for $X,Y \in \text{Vec}(\Sigma)$ and $\nabla$ is the induced Levi-Civita connection on $\Sigma$.
+	\end{kulblock}
 \end{frame}
 
 \section{Hilberts Theorem}
-\begin{frame}[c]{Affine Manifolds}
-
+\frame[c]{\sectionpage}
+\begin{frame}[c]{Hyperbolic Space}
 	\begin{kulblock}{Definition}
-		An \textit{affine manifold} is a differentiable manifold such that the transition maps lie in the affine group $\text{Aff}(\R^n)$
+		Hyperbolic space, $\mathbb{H}^n$ is the unique simply connected, complete Riemannian manifold of constant negative sectional curvature $-1$.
+	\end{kulblock}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.07]{images/PseudoSphere.svg.png}
+		\includegraphics[scale=0.155]{images/hyperbolicdisc.png}
+		\caption{Pseudo-sphere and Poincaire half plane model of the hyperbolic plane $\mathbb{H}^2$}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Asymptotic Curves}
+	\begin{kulblock}{Definition}
+		An asymptotic direction $v\in T_p \Sigma$ on $\Sigma$, is a direction where $II_p(v,v) = 0$
+	\end{kulblock}
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.5]{images/asymptoticcurves.png}
+		\caption{Asymptotic curves on some surfaces for the second fundamental form. (Wolfram)}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[c]{Asymptotic Curves}
+	\begin{kulblock}{Lemma}
+		If the extrinsic curvature $K$ satisfies $K<0$ at a point $p\in \Sigma$, then there are exactly $2$ asymptotic directions.
 	\end{kulblock}
 	\begin{remark}
-		The group $\text{Aff}(\R^n) := \text{GL}(\R^n) \ltimes \R^n$. An element $g \in \text{Aff}(\R^n)$ acts on $x\in \R^n$ by $g(x) = Ax +b$ where $A \in \text{GL}(\R^n)$ and $b \in \R^n$.
+		By paramaterizing our surface locally by curves tangent to these directions we can arrange that $e=g=0$ and $f>0$ in the matrix of $II$.
 	\end{remark}
 \end{frame}
 
-\section{Extensions of Hilberts Theorem}
-
-\begin{frame}[c]{Affine Manifolds}
-
-	\begin{kulblock}{Definition}
-		An \textit{affine manifold} is a differentiable manifold such that the transition maps lie in the affine group $\text{Aff}(\R^n)$
+\begin{frame}[c]{Arc Length Paramaterization}
+	\begin{kulblock}{Proposition (José A. Gálvez)}
+		Let $(I,II)$ be a fundamental pair on an oriented, simply connected surface of negative constant extrinsic curvature $K$. Then we can write $(I, II)$ as
+		$$I = du^2 + 2\cos \omega dudv + dv^2, \quad II = 2 \sqrt{-K} \sin \omega dudv$$
+		with $0<\omega < \pi$ as $1-F^2 >0$.
 	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Change of Coordinates}
+	Paramaterizing by curves along the asymptotic directions
+	\begin{center}
+		$I = \begin{pmatrix}
+				E & F \\ F & G
+			\end{pmatrix}, \quad$ $II = \begin{pmatrix}
+				0 & f \\ f & 0
+			\end{pmatrix}, \quad f> 0$
+	\end{center}
+
+	\begin{itemize}
+		\item If $E_v = G_u = 0$ then we can paramaterize by arc length as $E = E(u)$ and $G
+			      = G(v)$
+		\item This will hold true if $\nabla_{\frac{\partial}{\partial u}}
+			      \frac{\partial}{\partial v} = \nabla_{\frac{\partial}{\partial v}}
+			      \frac{\partial}{\partial u} = 0 $
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Can we parametrize nicely?}
+	Letting $D = EG - F^2$ we can calculate the following conditions on the Christoffel symbols using Koszul's formula
+	\begin{align}
+		\frac{D_u}{2D} = \Gamma_{11}^1 + \Gamma_{12}^2, \quad \frac{D_v}{2D} = \Gamma_{22}^2 + \Gamma_{12}^1
+	\end{align}
+	Now using the Codazzi equation we get the following condition on the Christoffel symbols
+	\begin{align}
+		\frac{f_u}{f} = \Gamma_{11}^1 - \Gamma_{12}^2, \quad \frac{f_v}{f} = \Gamma_{22}^2 - \Gamma_{12}^1
+	\end{align}
+\end{frame}
+
+\begin{frame}[c]{Can we parametrize nicely?}
+	Subtracting the corresponding equations of $(1) - (2)$ we obtain
+	\begin{align}
+		\frac{f_u}{f} - \frac{D_u}{2D}= 2\Gamma_{12}^2, \quad \frac{D_v}{2D} - \frac{f_v}{f} = 2\Gamma_{12}^1
+	\end{align}
+
+	We now have that $K = -\dfrac{f^2}{D}$ is a negative constant $\implies K_u =
+		K_v =0$.
 	\begin{remark}
-		The group $\text{Aff}(\R^n) := \text{GL}(\R^n) \ltimes \R^n$. An element $g \in \text{Aff}(\R^n)$ acts on $x\in \R^n$ by $g(x) = Ax +b$ where $A \in \text{GL}(\R^n)$ and $b \in \R^n$.
+		These derivatives give exactly the LHS and RHS respectively and so
+		$\Gamma_{12}^2 = \Gamma_{12}^1 = 0$
 	\end{remark}
+\end{frame}
+
+\begin{frame}[c]{Arc Length Paramaterization}
+	\begin{kulblock}{Proposition (José A. Gálvez)}
+		Since $E(u,v) = E(u)$ and $G(u,v) = G(v)$ we can parametrize by arc length and write our metric as
+		$$I = du^2 + 2\cos \omega dudv + dv^2, \quad II = 2 \sin \omega dudv$$
+		with $0<\omega < \pi$ as $1-F^2 >0$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{We have a global diffeomorphism!}
+	\begin{kulblock}{Proposition (José A. Gálvez)}
+		Let $III = du^2 - 2 \cos \omega dudv + dv^2$. Then $I + III = 2(du^2+dv^2)$ is a complete flat metric when $I$ is complete and
+		$$ (u,v) : (\Sigma, du^2 + dv^2) \to \mathbb{R}^2$$
+		is a local isometry, hence a covering map by completeness and hence a global isometry by simply connectedness. (TODO: Add Sources)
+	\end{kulblock}
+	% \url{http://staff.ustc.edu.cn/~spliu/HuZhangZhao.pdf} theorem 2.10
+\end{frame}
+
+\begin{frame}[c]{Hilberts Theorem}
+	\begin{kulblock}{Theorem (José A. Gálvez, Hilbert)}
+		Let $\Sigma$ be a complete surface of constant negative Gauss curvature $K(I)$. Then there is no isometric immersion
+		$$ f : \Sigma \to \mathbb{M}^3(c)$$
+		for $c=0,1$ and if $c = -1$ there is no such immersion if $K(I) < -1$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Hilberts Theorem Proof}
+	\begin{proof}
+		By our first theorem we can find global coordinates $(u, v)$ defined in $\mathbb{R}^2$ such that
+		$$I = du^2 + 2\cos \omega dudv + dv^2,$$
+		$$II = 2 \sqrt{-K} \sin \omega dudv$$
+		and $0< \omega < \pi$. The Gauss equation \emph{requires} that
+		$$\omega_{uv} = -(K+c)\sin \omega$$
+		where $-(K+ c) > 0$.
+	\end{proof}
+\end{frame}
+
+\section{Extensions of Hilberts Theorem}
+\frame[c]{\sectionpage}
+
+\begin{frame}[c]{Non-constant negative curvature}
+	\begin{kulblock}{Theorem (Efimov 1963)}
+		Let $\Sigma$ be a complete surface with Gauss curvature $K(I) \leq \delta < 0$. Then there is no isometric immersion
+		$$ f : \Sigma \to \mathbb{R}^3$$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Strictly Seperated Curvatures}
+	\begin{kulblock}{Definition}
+		The principle curvatures, $k_1,k_2$, of a fundamental pair $(I, II)$ are called \emph{strictly separated} if there exists numbers $c_1,c_2$ such that
+		$$k_1 \leq c_1 < c_2  \leq k_2$$
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Non-constant negative curvature}
+	\begin{kulblock}{Theorem (José A. Gálvez, Antonio Martínez, José L. Teruel)}
+		Let $(I,II)$ be a Codazzi pair on $\Sigma$ with strictly separated principal curvatures. If $(\Sigma, I)$ is a
+		complete surface with Gauss curvature $K(I) \leq 0$ and $I$ is not flat then $\Sigma$ is homeomorphic to a plane and
+		$$\int_{\Sigma}^{} |K(I)|dA \leq 2 \pi$$
+		where $dA$ is the area form induced by $I$.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Non-constant negative curvature}
+	\begin{kulblock}{Corollary (José A. Gálvez, Antonio Martínez, José L. Teruel)}
+		Let $\varphi: \Sigma \to \mathbb{H}^3$ be an immersion with Gaussian curvature $K(I) \leq -1$, and one of its principle curvature functions satisfying
+		$$k_i^2 \geq \epsilon^2 > 0, \quad \text{for } \epsilon>0 $$
+		then $\varphi$ is not a complete immersion.
+	\end{kulblock}
+\end{frame}
+
+\begin{frame}[c]{Questions?}
+	\begin{center}
+		\Large{Questions?}
+	\end{center}
+
 \end{frame}

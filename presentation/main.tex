@@ -3,12 +3,13 @@
    {style/kulakbeamer}
 
 \usepackage{definitions}
+\usepackage{svg}
+\newcommand{\inner}[2]{\langle #1, #2 \rangle}
 
 
-
-\title{Classifying Integral Affine Structures on Compact Surfaces}
+\title{Isometric Immersions of Negatively Curved Metrics}
 %\subtitle{Subtitle}
-\author[Short name]{Michael McGloin \and (Luka Zwaan)} 
+\author[Short name]{Michael McGloin \and (Joeri Van der Veken)} 
 \institute{KU Leuven}
 %% Overview at the beginning of each section; delete if unwanted.
 
@@ -16,8 +17,19 @@
 \begin{document}
 
 \begin{titleframe}
+   \vspace{20px}
+   \begin{figure}
+      \raggedleft
+      \includegraphics[scale=0.2]{images/image.png}
+   \end{figure}
    \titlepage
 \end{titleframe}
+
+\begin{frame}[c]{Hilberts Theorem}
+   \begin{kulblock}{Theorem (Hilbert 1901)}
+      There is no isometric immersion of a complete, smooth surface of constant negative curvature into $\mathbb{R}^3$.
+   \end{kulblock}
+\end{frame}
 
 \begin{frame}{Overview}
    \tableofcontents

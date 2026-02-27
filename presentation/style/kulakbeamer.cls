@@ -42,6 +42,7 @@
 \definecolor{KUL_light_blue}{rgb}{0.86, 0.91, 0.94}
 
 \usepackage{tcolorbox}
+\usepackage{etoolbox}
 \newtcolorbox{kulblock}[1]{
     before=\par\smallskip\centering,
 	colback=KUL_light_blue,
@@ -53,7 +54,13 @@
 	%titlerule=0pt,
 	arc=2pt,
 	fonttitle=\bfseries,
-	title={\strut#1}
+	title={\strut#1},
+  before upper={
+        % Change Beamer's normal text color inside the box
+        \begingroup
+        \setbeamercolor{normal text}{fg=white}%
+    },
+    after upper={\endgroup}
 }
 \newtcolorbox{cbox}[1][]{
    before=\par\smallskip,
@@ -161,7 +168,6 @@
 \setbeamersize{text margin left=21pt,text margin right=21pt} 	%text margins
 
 %itemize list
-\setbeamertemplate{itemize item}[triangle] 			%item symbol (triangle)
 \setbeamertemplate{itemize subitem}[circle]			%subitem symbol (cirlce)
 \renewcommand\textbullet{\ensuremath{\bullet}}		%correction for warning for subitem circle bullect
 \setbeamertemplate{itemize subsubitem}{-}			%subsubitem symbol (short hypthen)
@@ -183,6 +189,7 @@
 \newenvironment{outlineframe}[1][]
 {\bgroup\usebackgroundtemplate{\Outline}\begin{frame}{#1}}
 {\end{frame}\egroup}
+
 
 \setbeamertemplate{navigation symbols}{} %remove the navigation symbols
 
