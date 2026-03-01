@@ -1,11 +1,13 @@
+\PassOptionsToPackage{colorlinks=true,citecolor=pink,linkcolor=red,urlcolor=cyan}{hyperref}
 \documentclass
    [kul] % options: kulak (default) or kul, handout 
    {style/kulakbeamer}
 
 \usepackage{definitions}
 \usepackage{svg}
+\usepackage[style=apa]{biblatex}
 \newcommand{\inner}[2]{\langle #1, #2 \rangle}
-
+\addbibresource{KnotsFractalsReference.bib}
 
 \title{Isometric Immersions of Negatively Curved Metrics}
 %\subtitle{Subtitle}
@@ -18,17 +20,20 @@
 
 \begin{titleframe}
    \vspace{20px}
-   \begin{figure}
-      \raggedleft
-      \includegraphics[scale=0.2]{images/image.png}
-   \end{figure}
+   % \begin{figure}
+   %    \raggedleft
+   %    \includegraphics[scale=0.2]{images/image.png}
+   % \end{figure}
    \titlepage
 \end{titleframe}
 
 \begin{frame}[c]{Hilberts Theorem}
-   \begin{kulblock}{Theorem (Hilbert 1901)}
+   \begin{kulblock}{Theorem (\cite{Hilbert})}
       There is no isometric immersion of a complete, smooth surface of constant negative curvature into $\mathbb{R}^3$.
-   \end{kulblock}
+   \end{kulblock}\vspace{40px}
+   \footnotesize
+   \fullcite{Hilbert}
+
 \end{frame}
 
 \begin{frame}{Overview}
@@ -37,5 +42,7 @@
 
 % % % Here you go  % % % 
 \include{NegativelyCurvedMetrics}
-
+\begin{frame}[allowframebreaks]{References}
+   \printbibliography
+\end{frame}
 \end{document}
