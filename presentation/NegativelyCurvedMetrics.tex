@@ -7,21 +7,21 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}[c]{Poincaire Disc Model}
+\begin{frame}[c]{Poincáre Disc Model}
 	\begin{figure}
 		\includegraphics[scale=0.25]{images/PoincaireDisc.png}
 		\includegraphics[scale=0.8]{images/PeoplePoincaireDiusc.png}
-		\caption{Poincaire Disc Model (\cite{Trott1999Graphica1}) + People on disc (\cite{thurston2022geometry})}
+		\caption{Poincáre Disc Model (\cite{Trott1999Graphica1}) + People on disc (\cite{thurston2022geometry})}
 	\end{figure}
 \end{frame}
 
-\begin{frame}[c]{Upper-Half Plane Model}
+\begin{frame}[c]{Poincáre Half Plane Model}
 	\begin{itemize}
 		\item Let $\mathbb{H}^2 := \{z \in \mathbb{C} \mid Im(z)>0\}$
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[scale=0.225]{images/hyperbolicdisc.png}
-		\caption{Upper-Half plane model}
+		\caption{Poincáre Half Plane Model}
 	\end{figure}
 \end{frame}
 
@@ -40,6 +40,7 @@
 	\begin{kulblock}{Definition}
 		A (hyperbolic) surface is \emph{complete} if its straight lines can be continued indefinitely.
 	\end{kulblock}
+	\pause
 	\begin{kulblock}{Theorem (\cite{Hopf1926CliffordKlein}, \cite{Killing1891CliffordKlein})}
 		Any complete hyperbolic surface is the quotient $\mathbb{H}^2/\Gamma$ where $\Gamma$ is a discrete subgroup of $PSL(2, \mathbb{R})$. These groups are called \emph{Fuschian groups}.
 	\end{kulblock}
@@ -74,11 +75,13 @@
 	\begin{kulblock}{Definition}
 		A \emph{fundamental pair} on a manifold $M$ is a pair $(I,II)$ of symmetric, bilinear forms defined on $TM$ such that $I$ is a metric.
 	\end{kulblock}
+	\pause
 	In coordinates, $$I = \begin{pmatrix}
 			E & F \\ F & G
 		\end{pmatrix}, \quad II = \begin{pmatrix}
 			e & f \\ f & g
 		\end{pmatrix}$$
+	\pause
 	\begin{definition}
 		The shape operator $S$ is defined by $I(SX, Y) = II(X,Y)$. In coordinates $S = I^{-1}II$
 	\end{definition}
@@ -115,6 +118,7 @@
 	\begin{kulblock}{Definition}
 		A manifold $M$ is Riemannian if there is an inner product $\inner{\cdot}{\cdot}$ defined on each tangent space and $\inner{\cdot}{\cdot}$ varies smoothly.
 	\end{kulblock}
+	\pause
 	\begin{kulblock}{Definition}
 		An isometric immersion $$\varphi:(M,\inner{\cdot}{\cdot}_1) \to (N, \inner{\cdot}{\cdot}_2)$$
 		is a smooth, distance preserving map such that $d\varphi$ is injective everywhere.
@@ -148,6 +152,7 @@
 	\begin{kulblock}{Definition}
 		A \emph{space form} is a complete Riemannian manifold $M$ with constant sectional curvature.
 	\end{kulblock}
+	\pause
 	\begin{remark}
 		If $M$ is a complete simply connected Riemannian manifold with constant sectional curvature $c$
 		\begin{itemize}
@@ -162,18 +167,11 @@
 \frame[c]{\sectionpage}
 \begin{frame}[c]{Gauss Equation}
 	Let $\mathbb{M}^3(c)$ denote the unique simply connected space form with sectional curvature $c$ and $\Sigma$ be a surface.
-
-	\begin{kulblock}{Definition}
-		The Gauss equation of an immersion $f: \Sigma \to \mathbb{M}^3(c)$
+	\pause
+	\begin{kulblock}{Theorem}
+		The Gauss equation of an immersion $f: (\Sigma,I) \to \mathbb{M}^3(c)$ is given by
 		$$K(I) = K + c$$
 		where $K = \det(S)$ is the extrinsic curvature and $K(I)$ is the intrinsic curvature e.g. the sectional curvature $sec(T_p\Sigma)$.
-	\end{kulblock}
-\end{frame}
-
-\begin{frame}[c]{Codazzi Equation}
-	\begin{kulblock}{Definition}
-		The Codazzi equation associated to the fundamental pair $(I,II)$ with shape operator $S$ is given by
-		$$\nabla_X SY - \nabla_Y SX = S[X,Y]$$
 	\end{kulblock}
 \end{frame}
 
@@ -200,7 +198,7 @@
 
 \begin{frame}[c]{Arc Length Paramaterization}
 	\begin{kulblock}{Proposition (\cite{firstarticle})}
-		Let $(I,II)$ be a Codazzi pair on an oriented, simply connected surface of negative constant extrinsic curvature $K$. Then we can write $(I, II)$ as
+		Let $(I,II)$ be a Codazzi pair on an oriented, simply connected surface of negative constant extrinsic curvature $K$. Then in local coordinates $(u,v)$ we can write $(I, II)$ as
 		$$I =\begin{pmatrix}
 				1           & \cos \omega \\
 				\cos \omega & 1
@@ -221,19 +219,20 @@
 				0 & f \\ f & 0
 			\end{pmatrix}, \quad f> 0$
 	\end{center}
-
+	\pause
 	\begin{itemize}
-		\item If $\dfrac{\partial E}{\partial v} = \dfrac{\partial G}{\partial u} = 0$ then
+		\item<2-> If $\dfrac{\partial E}{\partial v} = \dfrac{\partial G}{\partial u} = 0$ then
 		      we can paramaterize by arc length as $E = E(u)$ and $G = G(v)$
-		\item This will hold true if $\nabla_{\frac{\partial}{\partial u}}
+		\item<3-> This will hold true if $\nabla_{\frac{\partial}{\partial u}}
 			      \frac{\partial}{\partial v} = \nabla_{\frac{\partial}{\partial v}}
 			      \frac{\partial}{\partial u} = 0 $
 	\end{itemize}
-	\begin{remark}
-		Recall $\nabla_{\frac{\partial}{\partial u}}
-			\frac{\partial}{\partial v} = \nabla_{\frac{\partial}{\partial v}}
-			\frac{\partial}{\partial u} = \Gamma_{12}^1  \frac{\partial}{\partial u} + \Gamma_{12}^2  \frac{\partial}{\partial v}$
-	\end{remark}
+	\uncover<4->{
+		\begin{remark}
+			Recall $\nabla_{\frac{\partial}{\partial u}}
+				\frac{\partial}{\partial v} = \nabla_{\frac{\partial}{\partial v}}
+				\frac{\partial}{\partial u} = \Gamma_{12}^1  \frac{\partial}{\partial u} + \Gamma_{12}^2  \frac{\partial}{\partial v}$
+		\end{remark}}
 \end{frame}
 
 \begin{frame}[c]{Can we parametrize nicely?}
@@ -241,6 +240,7 @@
 	\begin{align}
 		\frac{D_u}{2D} = \Gamma_{11}^1 + \Gamma_{12}^2, \quad \frac{D_v}{2D} = \Gamma_{22}^2 + \Gamma_{12}^1
 	\end{align}
+	\pause
 	Now using the Codazzi equation we get the following condition on the Christoffel symbols
 	\begin{align}
 		\frac{f_u}{f} = \Gamma_{11}^1 - \Gamma_{12}^2, \quad \frac{f_v}{f} = \Gamma_{22}^2 - \Gamma_{12}^1
@@ -252,7 +252,7 @@
 	\begin{align}
 		\frac{f_u}{f} - \frac{D_u}{2D}= 2\Gamma_{12}^2, \quad \frac{D_v}{2D} - \frac{f_v}{f} = 2\Gamma_{12}^1
 	\end{align}
-
+	\pause
 	We now have that $K = -\dfrac{f^2}{D}$ is a negative constant $\implies K_u =
 		K_v =0$.
 	\begin{remark}
@@ -263,7 +263,7 @@
 
 \begin{frame}[c]{Arc Length Paramaterization}
 	\begin{kulblock}{Proposition (\cite{firstarticle})}
-		Since $E(u,v) = E(u)$ and $G(u,v) = G(v)$ we can parametrize by arc length and write our metric as
+		Since $E(u,v) = E(u)$ and $G(u,v) = G(v)$ we can parametrize locally by arc length and write our Codazzi pair as
 		$$I = \begin{pmatrix}
 				1           & \cos \omega \\
 				\cos \omega & 1
@@ -280,7 +280,7 @@
 
 \begin{frame}[c]{We have a global diffeomorphism!}
 	\begin{kulblock}{Proposition (\cite{firstarticle})}
-		The map $ (u,v) : \Sigma \to \mathbb{R}^2$ is a global diffeomorphism.
+		The map $ (u,v) : \Sigma \to \mathbb{R}^2$ is a global diffeomorphism e.g. our coordinates are global.
 	\end{kulblock}
 	\begin{proof}
 		Let $III = du^2 - 2 \cos \omega dudv + dv^2$. Then $I + III = 2(du^2+dv^2)$ is a complete flat metric when $I$ is complete and
@@ -309,7 +309,7 @@
 				\sqrt{-K}\sin \omega & 0
 			\end{pmatrix}$$
 		and $0< \omega < \pi$. The Gauss equation \emph{requires} that
-		$$\frac{\partial}{\partial u}\omega_{v} = -(K+c)\sin \omega$$
+		$$\frac{\partial}{\partial v}\omega_{u} = -(K+c)\sin \omega$$
 		where $-(K+ c) > 0$.
 	\end{proof}
 \end{frame}
@@ -326,24 +326,25 @@
 
 \begin{frame}[c]{Strictly Seperated Curvatures}
 	\begin{kulblock}{Definition}
-		The principle curvatures, $k_1,k_2$, of a fundamental pair $(I, II)$ are called \emph{strictly separated} if there exists numbers $c_1,c_2$ such that
-		$$k_1 \leq c_1 < c_2  \leq k_2$$
+		The principle curvatures, $\kappa_1,\kappa_2$, of a fundamental pair $(I, II)$ are called \emph{strictly separated} if there exists numbers $c_1,c_2$ such that
+		$$\kappa_1 \leq c_1 < c_2  \leq \kappa_2$$
 	\end{kulblock}
 \end{frame}
 
 \begin{frame}[c]{Non-constant negative curvature}
 	\begin{kulblock}{Theorem (\cite{GALVEZ20151058})}
 		Let $(I,II)$ be a Codazzi pair on $\Sigma$ with strictly separated principal curvatures. If $(\Sigma, I)$ is a
-		complete surface with Gauss curvature $K(I) \leq 0$ and $I$ is not flat then $\Sigma$ is homeomorphic to a plane and
-		$$\int_{\Sigma}^{} |K(I)|dA \leq 2 \pi$$
-		where $dA$ is the area form induced by $I$.
+		complete surface with Gauss curvature $K(I) \leq 0$ and $I$ is not flat then $\Sigma$ is homeomorphic to a plane. \\
+
+		Furthermore, $$\int_{\Sigma}^{} |K(I)|dA \leq 2 \pi$$ where $dA$ is the area
+		form induced by $I$.
 	\end{kulblock}
 \end{frame}
 
 \begin{frame}[c]{Non-constant negative curvature}
 	\begin{kulblock}{Corollary (\cite{GALVEZ20151058})}
 		Let $\varphi: \Sigma \to \mathbb{H}^3$ be an immersion with Gaussian curvature $K(I) \leq -1$, and one of its principle curvature functions satisfying
-		$$k_i \geq \epsilon > 0, \quad \text{for } \epsilon>0 $$
+		$$\kappa_i \geq \epsilon > 0, \quad \text{for } \epsilon>0 $$
 		then $\varphi$ is not a complete immersion.
 	\end{kulblock}
 \end{frame}
